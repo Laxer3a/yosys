@@ -1,0 +1,41 @@
+# Build artifacts
+*.o
+*.a
+*.lib
+*.exe
+
+# Build directories
+build/
+cmake-build-*/
+
+# Test executables
+test/simple_example
+test/complex_example
+
+# Test outputs
+*.json
+
+# IDE files
+.vscode/
+.vs/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.suo
+*.user
+.idea/
+
+# CMake cache
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile.cmake
+
+# macOS
+.DS_Store
+
+# Backup files
+*~
+*.bak
+*.swp
