@@ -20,7 +20,7 @@
 // Standalone RTLIL library - modified includes
 #include "../include/yosys.h"
 // SHA1 not needed for basic RTLIL functionality
-// #include "libs/sha1/sha1.h"
+// #include "sha1/sha1.h"
 // Backend not needed for standalone library
 // #include "backends/rtlil/rtlil_backend.h"
 

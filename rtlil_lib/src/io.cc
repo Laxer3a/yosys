@@ -13,6 +13,12 @@
 
 YOSYS_NAMESPACE_BEGIN
 
+// Stubs for functions not available in standalone library
+void rewrite_filename(std::string &) { /* stub */ }
+std::vector<std::string> glob_filename(const std::string &pattern) {
+	return {pattern}; // stub - return pattern as-is
+}
+
 // Set of utilities for handling files
 
 int readsome(std::istream &f, char *s, int n)

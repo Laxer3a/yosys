@@ -48,7 +48,7 @@ inline void yosys_shutdown() { rtlil_shutdown(); }
 // RTLIL_BACKEND stub namespace
 namespace RTLIL_BACKEND {
 	inline void dump_sigspec(std::ostream &os, const RTLIL::SigSpec &sig, bool autoint = true) {
-		(void)autoint;
+		(void)autoint; (void)sig;
 		os << "[SigSpec]";  // Simplified output
 	}
 	inline void dump_module(std::ostream &os, std::string indent, RTLIL::Module *module,
@@ -59,6 +59,10 @@ namespace RTLIL_BACKEND {
 	inline void dump_cell(std::ostream &os, std::string indent, RTLIL::Cell *cell) {
 		(void)indent;
 		os << cell->type.c_str() << " " << cell->name.c_str() << "\n";
+	}
+	inline void dump_wire(std::ostream &os, std::string indent, const RTLIL::Wire *wire) {
+		(void)indent;
+		os << "wire " << wire->name.c_str() << "\n";
 	}
 }
 
