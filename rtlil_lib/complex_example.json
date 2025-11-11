@@ -1,0 +1,77 @@
+{
+  "creator": "RTLIL Standalone Library",
+  "modules": {
+    "\counter_with_load": {
+      "ports": {
+        "\overflow": {
+          "direction": "output",
+          "bits": 1
+        },
+        "\count": {
+          "direction": "output",
+          "bits": 8
+        },
+        "\load_value": {
+          "direction": "input",
+          "bits": 8
+        },
+        "\load": {
+          "direction": "input",
+          "bits": 1
+        },
+        "\rst": {
+          "direction": "input",
+          "bits": 1
+        },
+        "\clk": {
+          "direction": "input",
+          "bits": 1
+        }
+      },
+      "cells": {
+        "$eq$5": {
+          "type": "$eq",
+          "connections": {
+            "\Y": "\overflow",
+            "\B": 255,
+            "\A": "\count"
+          }
+        },
+        "$dff$4": {
+          "type": "$dff",
+          "connections": {
+            "\Q": "\count",
+            "\D": "\next_count",
+            "\CLK": "\clk"
+          }
+        },
+        "$mux$3": {
+          "type": "$mux",
+          "connections": {
+            "\Y": "\next_count",
+            "\S": "\rst",
+            "\B": 0,
+            "\A": "\mux_out"
+          }
+        },
+        "$mux$2": {
+          "type": "$mux",
+          "connections": {
+            "\Y": "\mux_out",
+            "\S": "\load",
+            "\B": "\load_value",
+            "\A": "\incremented"
+          }
+        },
+        "$add$1": {
+          "type": "$add",
+          "connections": {
+            "\Y": "\incremented",
+            "\B": 1,
+            "\A": "\count"
+          }
+        }
+      }
+    }
+  }
+}
